@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+
 
 const Students = (props)=>{
     console.log(props.data);
@@ -27,7 +27,6 @@ export const getStaticPaths = async()=>{
 }
 
 export const getStaticProps = async(context)=>{
-    const router = useRouter();
     const data =await (await fetch(`https://ece-7b7q.onrender.com/${context.params.roll}`)).json();
     return {
         props:{
